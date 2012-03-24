@@ -1,10 +1,12 @@
 == ActsAsDynamic
 
-This gem provide the logic to extend classes and add capability of accept dynamic attributes                                                                                                                                                             mic methods
+This gem provide the logic to extend classes and add capability of accept dynamic attributes.
 
 == Installation
 
-gem "acts_as_dynamic"
+Just add ActsAsDynamic in your Gemfile:
+
+  gem "acts_as_dynamic"
 
 == Method of use
 
@@ -16,6 +18,7 @@ You can set dynamic attributes using builder:
       [self.name, self.last_name].join " "
     end
   end
+
   person = Person.new(:name => "Chuck", :last_name => "Norris")
   person.complete_name
   #=> "Chuck Norris"
