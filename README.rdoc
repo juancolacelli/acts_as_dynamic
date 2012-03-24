@@ -1,0 +1,32 @@
+== ActsAsDynamic
+
+This gem provide the logic to extend classes and add capability of accept dynamic attributes                                                                                                                                                             mic methods
+
+== Installation
+
+gem "acts_as_dynamic"
+
+== Method of use
+
+You can set dynamic attributes using builder:
+  class User
+    acts_as_dynamic
+
+    def complete_name
+      [self.name, self.last_name].join " "
+    end
+  end
+  person = Person.new(:name => "Chuck", :last_name => "Norris")
+  person.complete_name
+  #=> "Chuck Norris"
+
+Or using method dynamic attributes directly:
+  person.age = 18
+  person.age
+  #=> 18
+
+== License
+
+Rweb is released under the MIT license:
+
+* http://www.opensource.org/licenses/MIT
