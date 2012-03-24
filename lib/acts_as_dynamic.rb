@@ -1,8 +1,8 @@
 # <libraries>
 
-	require "lib/object"
-  require "lib/acts_as_dynamic/base"
-  require "lib/acts_as_dynamic/version"
+  require "object"
+  require "acts_as_dynamic/base"
+  require "acts_as_dynamic/version"
 
 # </libraries>
 
