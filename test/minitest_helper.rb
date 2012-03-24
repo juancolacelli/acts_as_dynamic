@@ -8,6 +8,6 @@
   require 'minitest/autorun'
 
   # ActsAsDynamic
-  require "lib/acts_as_dynamic"
+  require "acts_as_dynamic"
 
 # </libraries>

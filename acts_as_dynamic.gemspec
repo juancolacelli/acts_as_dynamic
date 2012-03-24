@@ -15,5 +15,5 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/juancolacelli/acts_as_dynamic"
 
   # Include everything in the lib folder
-  s.files = Dir["lib/acts_as_dynamic.rb"]
+  s.files = Dir["lib/**/*.rb"]
 end
