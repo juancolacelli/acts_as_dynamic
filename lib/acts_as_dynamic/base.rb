@@ -33,9 +33,14 @@ module ActsAsDynamic
         end
       end
 
-      # New record
+      # New record?
       def new_record?
         true
+      end
+
+      # Persisted?
+      def persisted?
+        false
       end
 
     # </methods>
