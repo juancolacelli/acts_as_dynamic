@@ -14,6 +14,8 @@ You can set dynamic attributes using builder:
   class User
     acts_as_dynamic
 
+    validates_presence_of :name
+
     def complete_name
       [self.name, self.last_name].join " "
     end
@@ -27,6 +29,14 @@ Or using method dynamic attributes directly:
   person.age = 18
   person.age
   #=> 18
+
+And you can use ActiveModel methods:
+  person.valid?
+  #=> true
+
+Or use the instance at a Ruby on Rails form:
+  = form_for person do |f|
+    ...
 
 == License
 
