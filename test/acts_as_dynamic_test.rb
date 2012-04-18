@@ -1,5 +1,10 @@
 # <libraries>
 
+  # Path patch
+  $:.unshift(Dir.pwd)
+  $:.unshift(Dir.pwd + "/lib")
+
+  # Minitest
   require "test/minitest_helper"
 
 # </libraries>
@@ -11,8 +16,18 @@ describe ActsAsDynamic do
     # Person
     class Person
 
-      # ActsAsDynamic
-      acts_as_dynamic
+      # <libraries>
+
+        # ActsAsDynamic
+        acts_as_dynamic
+
+      # </libraries>
+
+      # <validations>
+
+        validates_presence_of :name
+
+      # </validations>
 
       # <instance methods>
 
@@ -45,6 +60,26 @@ describe ActsAsDynamic do
     # He has 18 years?
     person.age.must_equal 18
 
+  end
+
+  it "must have a name to be valid" do
+
+    # Instance without attributes
+    person = Person.new
+    # Invalid
+    assert person.invalid?
+    # Name assignation
+    person.name = "Chuck"
+    # Valid
+    assert person.valid?
+
+  end
+
+  it "must respond to model_name and param_key (usefull at Ruby on Rails forms)" do
+    # Model name
+    Person.model_name.must_equal "Person"
+    # Param key
+    Person.model_name.param_key.must_equal "person"
   end
 
 end

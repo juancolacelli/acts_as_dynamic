@@ -8,7 +8,7 @@ module ActsAsDynamic
 
       # Builder
       def initialize args = {}
-        args.each_pair do |attribute, value|
+        (args || {}).each_pair do |attribute, value|
           self.send "#{attribute}=", value
         end
         self
