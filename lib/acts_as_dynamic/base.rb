@@ -33,6 +33,11 @@ module ActsAsDynamic
         end
       end
 
+      # New record
+      def new_record?
+        true
+      end
+
     # </methods>
 
   end

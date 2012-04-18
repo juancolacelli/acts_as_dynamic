@@ -35,7 +35,7 @@ And you can use ActiveModel methods:
   #=> true
 
 Or use the instance at a Ruby on Rails form:
-  = form_for person do |f|
+  = form_for person, :url => people_path do |f|
     ...
 
 == License
