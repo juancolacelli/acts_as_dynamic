@@ -12,6 +12,7 @@ class Class
       require "active_model"
       include ActiveModel::Validations
       include ActiveModel::Serialization
+      include ActiveModel::Conversion
       extend ActiveModel::Naming
     end
 
